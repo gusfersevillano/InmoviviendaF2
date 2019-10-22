@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+ <div class="container">  
+ 	<a class="navbar-brand" routerLink=""> Nuestras ofertas </a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+ 	 </button>
+  	<div class="collapse navbar-collapse" id="navbarNav">
+   	 <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">Login</a>
+      </li>
+   	   <li class="nav-item">
+        <a class="nav-link" routerLink="/photos">Todos los proyectos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/photos/new">Realiza un proyecto</a>
+      </li>
+    
+    </ul>
+  </div>
+ </div>
+
+</nav>
+
+
+<div class="row">
+	<div class="col-md-4 p4" *ngFor="let photo of photos">
+		<div class="card card-photo" (click)="selectedCard(photo._id)">
+			<div class ="card-header">
+				{{photo.title}}
+				
+			</div>
+			<img [src]="'http://localhost:4000/'+ photo.imagePath" class= "img-card-top w-100" >
+			<div clas ="card-body">
+				{{photo.description}}
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
