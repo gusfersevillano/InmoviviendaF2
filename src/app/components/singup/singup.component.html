@@ -1,0 +1,32 @@
+<div class="col-lg-4 mx-auto">
+	<div class="card">
+			<div class="card-header">
+				Cargar usuario
+			</div>
+
+			<div clas="card-body" align= "center">
+				<form (submit)="uploadUser(username, telefono, password)" >
+					<div class="form-group">
+						<input type="text"  class= "form-control" placeholder="Username" required #username > 
+						
+					</div>
+					
+					<div class="form-group">
+					<input type="text"  class="form-control" placeholder="Célular" required #telefono>
+					</div>
+					
+					<div class="form-group">
+					<input type="password"  class="form-control" placeholder="clave" required #password >
+					</div>
+
+				<button class="btn btn-primary btn-block" type="">
+					SignUp
+				</button>
+
+				</form>
+
+
+			</div>
+	</div>
+	
+</div>

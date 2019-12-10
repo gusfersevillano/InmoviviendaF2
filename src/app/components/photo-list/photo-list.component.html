@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="height: 2.5rem;">
+ <div class="container">  
+ 	<a class="navbar-brand" routerLink=""> {{user1}}: tus proyectos </a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+ 	 </button>
+  	<div class="collapse navbar-collapse" id="navbarNav">
+   	 <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">Login</a>
+      </li>
+   	  
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]= "['new']" [queryParams]="{idv: idv}" >Nuevo Proyecto</a>
+      </li>
+  
+
+    </ul>
+  </div>
+ </div>
+
+</nav>
+
+      <form >
+         <div class="row">
+          <div class="col-md-4 p4" >
+                <input  class="d-none" [value]=idv  #vendedor >
+            <div class="form-group">
+              <select id="L1" class= "form-control" placeholder="Venta"  #transaccion>
+                <option value=""></option>
+                <option value="VENTA">VENTA</option>
+                <option value="ALQUILER">ALQUILER</option>
+                <option value="OTRO">OTRO</option>
+              </select>
+            
+
+            <select id="L2" class= "form-control" placeholder="Precio"  #precio>
+              <option value=""> </option>
+              <option value="1">0-100</option>
+              <option value="2">100-300</option>
+              <option value="3">300-500</option>
+              <option value="4">500-1.000</option>
+              <option value="5">1.000-5.000</option>
+              <option value="6">5.000-50.000</option>
+              <option value="7">75.000-100.000</option>
+              <option value="8">100.000-150.000</option>
+              <option value="9">150.000-300.000</option>
+              <option value="10">más de 300.000</option>
+            </select>
+           
+            <select id="L3" class= "form-control" placeholder="Sector"  #sector>
+              <option value=""></option>
+              <option value="Norte">Norte</option>
+              <option value="Sur">Sur</option>
+              <option value="Centro norte">Centro norte</option>
+              <option value="Centro norte">Valles</option>
+              <option value="Provincia">Provincia</option>
+            </select>
+             <button (click)="buscarproyectos(transaccion, precio, sector, vendedor)" class="btn btn-primary btn-block" type="">
+              Buscar
+            </button>
+
+          </div>
+          </div>
+        </div>
+      </form>
+
+
+<div class="row">
+	<div class="col-md-4 p4" *ngFor="let photo of photos">
+		<div class="card card-photo" (click)="selectedCard(photo._id, idv)">
+			<div class ="card-header">
+				{{photo.transaccion}}
+				
+			</div>
+			<img [src]="'http://165.227.20.230:4000/'+ photo.imagePath" class= "img-card-top w-100" >
+			<div clas ="card-body">
+				{{photo.caracteristicas}}
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>

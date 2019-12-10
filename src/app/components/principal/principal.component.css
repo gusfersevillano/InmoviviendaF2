@@ -1,0 +1,30 @@
+.Titulo1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 2rem;
+	color: rgb(42,152,186);
+}
+
+.Titulo2 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.6rem;
+	color: rgb(42,152,186);
+}
+
+.Parrafo1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.5rem;
+	color: rgb(166,166,166);
+}
+
+
+.FotosT {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.1rem;
+	color: rgb(0,176,240);
+}
+
+.FotosN {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.3rem;
+	color: rgb(127,127,127);
+}
