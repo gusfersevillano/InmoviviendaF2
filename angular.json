@@ -64,7 +64,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-photo-gallery:build"
+            "browserTarget": "angular-photo-gallery:build",
+            "host":"134.209.162.183",
+            "port":1738
           },
           "configurations": {
             "production": {
