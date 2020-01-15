@@ -1,0 +1,36 @@
+<h2  class="Titulo1" align="Left">Nuestro catálogo:</h2>
+<div class="card" >
+ <div class="card-body">
+
+    
+</div>
+
+    <div class="row">
+      <div class="col-md-4 p4" *ngFor="let photo of photos">
+        <div class="card card-photo" >
+          <div class ="card-header">
+            {{photo.transaccion}}
+            
+          </div>
+          <img [src]="'http://165.227.20.230:4000/'+ photo.imagePath" class= "img-card-top w-100" >
+          <div clas ="card-body">
+            {{photo.precio}}
+          </div>
+          <p class="card-text"></p>
+          
+        </div>
+        
+      </div>
+      
+  </div>
+
+
+
+</div>
+
+
+
+
+
+    
+

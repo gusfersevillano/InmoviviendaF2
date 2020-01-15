@@ -9,7 +9,7 @@
 <div class="row">
 	<div clas=col-md-5>
 		<div class="card">
-			<img [src]="'http://localhost:4000/'+ photo.imagePath" 
+			<img [src]="'http://165.227.20.230:4000/'+ photo.imagePath" 
 			class="img-fluid">
 			
 		</div>
@@ -17,17 +17,42 @@
 	</div>
 		<div class="col-md-7">
 			<div class="card">
-				<form class="card-body" (submit)="updatePhoto(title, description)">		
+				<form class="card-body" (submit)="updatePhoto(venta, precio, sector, metros, caracteristicas, vendedor)">		
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Título de la fot" [value]="photo.title" #title>
+						<input type="text" class="d-none" placeholder="transaccion" [value]="photo.vendedor" #venta1>
 					</div>
 					<div class="form-group">
-							<textarea rows="2" class="form-control" placeholder="descripción" [value]="photo.description" #description></textarea>
-						
+						<select id="L1" class= "form-control" required #venta [value]="photo.transaccion">
+						  <option value="Venta">Venta</option>
+						  <option value="Alquiler">Alquiler</option>
+						  <option value="Otro">Otro</option>
+						</select> 
 					</div>
-					<button class="btn btn-primary btn-block">
-						actualizar
-					</button>
+
+					<div class="form-group">
+						<input id="L2" type="number"  class= "form-control" [value]="photo.precio" placeholder="Precio" required #precio > 
+					</div>
+
+					<div class="form-group">
+						<select id="L3" class= "form-control" [value]="photo.sector" required #sector>
+						  <option value="Norte">Norte</option>
+						  <option value="Sur">Sur</option>
+						  <option value="Centro norte">Centro norte</option>
+						  <option value="Centro norte">Valles</option>
+						  <option value="Provincia">Provincia</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<input id="L4" type="number"  class= "form-control" placeholder="metros"  [value]="photo.metros" required #metros > 
+					</div>
+					
+					<div class="form-group">
+						<textarea id="L5" rows="2" class="form-control" placeholder="Características principales" required #caracteristicas  [value]="photo.caracteristicas"  ></textarea>
+					</div>
+	<!--  		<button class="btn btn-primary btn-block">
+						Actualizar
+					</button>-->
 				</form>
 				
 			</div>
@@ -38,7 +63,7 @@
 	
 
 <button class="btn btn-danger" (click)="deletePhoto(photo._id)">
-	elimianra
+	Eliminar proyecto
 
 </button>
 

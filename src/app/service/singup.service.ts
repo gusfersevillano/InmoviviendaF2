@@ -1,34 +1,41 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
-//import {Photo} from '../inferfaces/Photo';
+import {User} from '../inferfaces/Photo';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  URI='http://localhost:4000/api/signup';
-  URI_p1='http://localhost:3000/api/auth/signup/';
-  URI_in='http://localhost:4000/api/signin';
+
+  URL='http://165.227.20.230:4000/';
+  URL1='http://localhost:4000/';
 
   constructor(private http:HttpClient,
               ) { }
 
-  createUser(username: string, email: string, password: string ){
-    console.log(username);
-    console.log(email);
-    console.log(password);
-  	const fd = new FormData();
-  	fd.append('username', username);
-  	fd.append('email', email);
-  	fd.append('password', password);
+  createUser(username: string, telefono: string, password: string ){
+    //console.log(username);
+    //console.log(email);
+    //console.log(password);
+  	//const fd = new FormData();
+  	//fd.append('username', username);
+  	//fd.append('email', email);
+  	//fd.append('password', password);
 
-  	return this.http.post(this.URI, {"username":username, "email":email, "password":password});
+  	return this.http.post(`${this.URL}api/signup`, {"username":username, "telefono":telefono, "password":password});
   }
 
-  signinUser(email: string, password: string ){
+  signinUser(telefono: string, password: string ){
+
    
-    return this.http.post(this.URI_in, {"email":email, "password":password});
+    return this.http.post<User>(`${this.URL}api/signin`, {"telefono": telefono, "password":password});
   }
+
+  getUsuario(idv: string){
+    //console.log(idv);
+    return this.http.post<User>(`${this.URL}api/datos${idv}`, {idv})
+
+   }
 
  
 }

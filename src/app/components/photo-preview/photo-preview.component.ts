@@ -11,6 +11,7 @@ import {Photo} from '../../inferfaces/Photo'
 export class PhotoPreviewComponent implements OnInit {
 	id: string;
 	photo: Photo;
+  idv: string;
   constructor(
   	private activeRoute: ActivatedRoute,
   	private router: Router,
@@ -20,7 +21,9 @@ export class PhotoPreviewComponent implements OnInit {
   ngOnInit() {
   	this.activeRoute.params.subscribe(params =>{
   		this.id= params ['id'];
-  		this.photoService.getPhoto(this.id).subscribe(
+      this.idv= params ['idv'];
+  	//	console.log(this.idv);
+      this.photoService.getPhoto(this.id).subscribe(
   			res => {this.photo = res;},
   			err=> console.log(err)
   			)
@@ -30,11 +33,19 @@ export class PhotoPreviewComponent implements OnInit {
   }
 
   deletePhoto(id: string){
+    
+  this.activeRoute.params.subscribe(params =>{
+      this.id= params ['id'];
+      this.idv= params ['idv'];
+      console.log(this.idv);
+    })
+
+
 
   	this.photoService.deletePhoto(id).subscribe(
   		res=> {
   			console.log(res),
-  			this.router.navigate(['/photos'])},
+  			this.router.navigate(['/photos/', this.idv])},
   		err=> console.log(err)
   		)
   }

@@ -11,6 +11,9 @@ import { PhotoListComponent } from './components/photo-list/photo-list.component
 import { SingupComponent } from './components/singup/singup.component';
 import { SinginComponent } from './components/singin/singin.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { PresentacionComponent } from './components/presentacion/presentacion.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { PrincipalComponent } from './components/principal/principal.component';
     PhotoListComponent,
     SingupComponent,
     SinginComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    PresentacionComponent,
+    CatalogoComponent,
+    ServiciosComponent
   ],
   imports: [
     BrowserModule,

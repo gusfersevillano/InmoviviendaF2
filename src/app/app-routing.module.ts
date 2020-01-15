@@ -6,6 +6,9 @@ import {PhotoPreviewComponent} from './components/photo-preview/photo-preview.co
 import {SingupComponent} from './components/singup/singup.component';
 import {SinginComponent} from './components/singin/singin.component';
 import {PrincipalComponent} from './components/principal/principal.component';
+import {PresentacionComponent} from './components/presentacion/presentacion.component';
+import {CatalogoComponent} from './components/catalogo/catalogo.component';
+import {ServiciosComponent} from './components/servicios/servicios.component';
 
 
 const routes: Routes = [
@@ -13,6 +16,18 @@ const routes: Routes = [
 {
 	path:'principal',
 	component: PrincipalComponent,
+},
+{
+	path:'catalogo',
+	component: CatalogoComponent,
+},
+{
+	path:'servicios',
+	component: ServiciosComponent,
+},
+{
+	path:'presentacion',
+	component: PresentacionComponent,
 },
 {
 	path:'signin',
@@ -23,21 +38,21 @@ const routes: Routes = [
 	component: SingupComponent,
 },
 {
-	path:'photos',
+	path:'photos/:idv',
 	component: PhotoListComponent,
 },
 
 {
-	path: 'photos/new',
+	path: 'photos/:idv/new',
 	component: PhotoFormComponent,
 },
 {
-	path: 'photos/:id',//se coloca : porque es dinámico
+	path: 'photos/:idv/:id',//se coloca : porque es dinámico
 	component: PhotoPreviewComponent,
 },
 {
 	path:'',
-	redirectTo:'/principal',
+	redirectTo:'/presentacion',
 	pathMatch:'full',
 },
 
