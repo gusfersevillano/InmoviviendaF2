@@ -25,7 +25,13 @@
             ],
             "styles": [
               "node_modules/bootswatch/dist/materia/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/main.css",
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/ie.css",
+              "src/assets/css/main-one-page.css",
+   
             ],
             "scripts": []
           },
@@ -64,9 +70,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-photo-gallery:build",
-            "host":"134.209.162.183",
-            "port":1738
+            "browserTarget": "angular-photo-gallery:build"
           },
           "configurations": {
             "production": {
